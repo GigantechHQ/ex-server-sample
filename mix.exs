@@ -15,7 +15,7 @@ defmodule Ggtserver.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [applications: [:logger, :cowboy, :ex_json_schema, :poison, :httpoison],
+    [applications: [:logger, :cowboy, :poison],
       mod: {Ggtserver,[]}]
   end
 
@@ -29,10 +29,10 @@ defmodule Ggtserver.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-   [{:ex_json_schema, "~> 0.5"},
+   [
     {:cowboy, github: "ninenines/cowboy"},
-    {:httpoison, "~> 0.7.2"},
     {:poison, "~> 3.0.0"},
-    {:distillery, "~> 1.1.0", runtime: false}]
+    {:distillery, "~> 1.1.0", runtime: false}
+    ]
   end
 end
